@@ -6,3 +6,4 @@ Fully responsive on both mobile & desktop
 <br> Demo :-
 <br>
 <img src = "demo.png" />
+<img src = "demo-mobile.png" />
