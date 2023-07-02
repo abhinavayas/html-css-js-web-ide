@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css" >
+    <script src="https://kit.fontawesome.com/cab11bc7e7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="header"> <h2>Hello World Coder</h2></div>
+    <div class = "container">
+        <div class = "top-parent" id = "top-parent" >  
+        <div class = "top" id = "top">
+            <div>  
+                <label><i class="fa-brands fa-html5 fa-bounce"></i> HTML</label>
+                <textarea id = "html-code" onkeyup = "run()" ></textarea>
+             </div>
+             <div>
+                <label><i class="fa-brands fa-css3-alt fa-beat"></i> CSS</label>
+                <textarea id = "css-code" onkeyup = "run()"></textarea>
+            </div>
+            <div> 
+                <label><i class="fa-brands fa-square-js fa-beat-fade"></i> JAvaScript</label>
+                <textarea id = "js-code" onkeyup = "run()" ></textarea>
+            </div>
+        </div>
+        </div>
+        <div class="bottom">
+            <label><i class="fa-solid fa-play fa-spin"></i>Output</label>       
+            <iframe id = "output"></iframe>
+        </div>
+    
+</div>
+    <h6> This is not a production version <br> Contact : abhinavrajdevcontact@gmail.com <br>  &copy 2023 Abhinav Raj </h6>
+    <script>
+
+        var height = window.innerHeight;
+        let output = document.getElementById("output")
+
+        if (window.innerWidth >= 600 ) { 
+            output.style.height = (height - 150) + "px"
+            var topparent = document.getElementById("top")
+            topparent.style.height = (height - 80) + "px"
+        }else { 
+            output.style.height = window.innerWidth + "px"
+        }
+        function run () {
+            let htmlcode = document.getElementById("html-code").value;
+            let csscode = document.getElementById("css-code").value;
+            let jscode = document.getElementById("js-code").value;
+            
+
+            output.contentDocument.body.innerHTML = htmlcode + "<style>" + csscode + "</style>";
+            output.contentWindow.eval(jscode);
+        }
+    </script>
+</body>
+</html>
